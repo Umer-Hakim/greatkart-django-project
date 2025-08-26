@@ -129,8 +129,20 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_HOST           = 'smtp.gmail.com'
+EMAIL_POST           = 587
+EMAIL_HOST_USER      = 'umarhakimkk6090@gmail.com'
+EMAIL_HOST_PASSWORD  = 'yjxd wjzp sxnb ilgt'
+EMAIL_USE_TLS        = True
