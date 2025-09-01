@@ -9,7 +9,57 @@
 	{% if 'search' in request.path %}
 	<h2 class="title-page">Search Results </h2>
 	{% else %}
-	<h2 class="title-page">Our Store </h2>
+	<a href="{% url 'store' %}" class="store-btn">
+  🛒 Our Store
+</a>
+
+<style>
+.store-btn {
+  display: inline-block;
+  background: linear-gradient(145deg, #497097ff, #26d1ebff); /* Blue gradient */
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.5),
+              inset 0 2px 3px rgba(255,255,255,0.4);
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Glow effect */
+.store-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+  transform: rotate(25deg);
+  transition: 0.6s;
+  opacity: 0;
+}
+
+.store-btn:hover::before {
+  opacity: 1;
+  transform: rotate(25deg) scale(1.1);
+}
+
+.store-btn:hover {
+  transform: scale(1.07) translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.7),
+              inset 0 2px 4px rgba(255,255,255,0.5);
+  background: linear-gradient(145deg, #007bff, #1e90ff); /* Reverse gradient */
+}
+</style>
+
+
 	{% endif %}
 	
 </div> <!-- container //  -->
